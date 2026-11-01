@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--dypej-u$22xi%y+#0^flqkekph1dm)f8782=t%$@#td@5xz7b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://complexmath.onrender.com"]
+ALLOWED_HOSTS = ["complexmath.onrender.com"]
 
 
 # Application definition
