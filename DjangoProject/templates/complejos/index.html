@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<html lang="es">
+ {% load static %}
+<head>
+    <meta charset="UTF-8">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora de Números Complejos</h1>
+
+       <form method="POST">
+
+        {% csrf_token %}
+
+        <label for="numero1">
+            Número complejo 1:
+        </label>
+
+        <input
+            type="text"
+            id="numero1"
+            name="numero1"
+            placeholder="Ej. 3+4i"
+            required
+        >
+
+        <br><br>
+
+        <label for="numero2">
+            Número complejo 2:
+        </label>
+
+        <input
+            type="text"
+            id="numero2"
+            name="numero2"
+            placeholder="Ej. 2-i"
+        >
+
+        <br><br>
+
+        <label for="operacion">
+            Operación:
+        </label>
+
+        <select
+            id="operacion"
+            name="operacion"
+            required
+        >
+
+            <option value="">
+                -- Selecciona una operación --
+            </option>
+
+            <option value="suma">
+                Suma
+            </option>
+
+            <option value="resta">
+                Resta
+            </option>
+
+            <option value="multiplicacion">
+                Multiplicación
+            </option>
+
+            <option value="division">
+                División
+            </option>
+
+            <option value="potencia">
+                Potencia
+            </option>
+
+            <option value="conjugado">
+                Conjugado
+            </option>
+
+            <option value="raiz">
+                Raíz
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <button type="submit">
+            Calcular
+        </button>
+
+        <button
+            type="button"
+            id="btnImagen">
+            🎲 Imagen aleatoria
+        </button>
+
+    </form>
+
+    <div
+    id="modalImagen"
+    class="modal">
+
+    <div class="modal-contenido">
+
+            <button
+                type="button"
+                id="cerrarModal"
+                class="cerrar">
+                ×
+            </button>
+
+            <h2>
+                Imagen aleatoria
+            </h2>
+
+            <div id="contenedorImagen">
+
+                <p>
+                    Cargando imagen...
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% if operacion == "raiz" %}
+
+        <h2>Raíces enésimas</h2>
+
+        {% for raiz in resultado %}
+
+            <p>
+                <strong>
+                    Raíz {{ forloop.counter }}:
+                </strong>
+
+                {{ raiz }}
+            </p>
+
+        {% endfor %}
+
+    {% else %}
+
+        {% if resultado %}
+
+            <h2>Resultado</h2>
+
+            <p>
+                {{ resultado }}
+            </p>
+
+        {% endif %}
+
+    {% endif %}
+
+
+    {% if grafica_html %}
+
+    <hr>
+
+    <h2>
+        Gráfica
+    </h2>
+
+    {{ grafica_html|safe }}
+
+    {% endif %}
+
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
