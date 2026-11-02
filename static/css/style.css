@@ -186,6 +186,34 @@ button:hover {
         padding: 20px;
     }
 
+
+/* Pie de página y créditos */
+
+.footer-creditos {
+    width: 100%;
+    margin-top: 50px;
+    padding: 25px 15px;
+    text-align: center;
+
+    background-color: #101827;
+    color: #ffffff;
+
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+
+    border-top: 3px solid #7968e9;
+}
+
+.footer-creditos p {
+    margin: 5px 0;
+}
+
+.footer-creditos strong {
+    color: #a99bff;
+    font-size: 16px;
+}
+
     h1 {
         font-size: 25px;
     }
