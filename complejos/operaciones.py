@@ -101,11 +101,7 @@ if __name__ == "__main__":
     print("Multiplicación:", multiplicacion(z1, z2))
     print("División:", division(z1, z2))
     print("Potencia:", potencia(z1, 3))
-    print("Raíz cuadrada:", raiz_cuadrada(z1))
     print("Raíces cúbicas:")
 
     for r in raices(z1, 3):
         print(r)
-
-    print("\nResumen")
-    print(resumen(z1, z2))
