@@ -202,7 +202,7 @@ def inicio(request):
 
                         include_plotlyjs="cdn"
                     )
-                else:
+                elif z1 is None:
                     resultado = conjugado(z2)
 
                     grafica = graficar(
