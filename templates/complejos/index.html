@@ -149,13 +149,13 @@
     {% else %}
 
         {% if resultado %}
-
+        <div class="resultado">
             <h2>Resultado</h2>
 
             <p>
                 {{ resultado }}
             </p>
-
+        </div>
         {% endif %}
 
     {% endif %}
@@ -164,35 +164,34 @@
     {% if grafica_html %}
 
     <hr>
-
+    <div class="grafica">
     <h2>
         Gráfica
     </h2>
 
     {{ grafica_html|safe }}
-
+    </div>
     {% endif %}
 
+    <footer class="footer-creditos">
 
- <footer class="footer-creditos">
+        <p>
+            <strong>Calculadora de Números Complejos</strong>
+        </p>
 
-    <p>
-        <strong>Calculadora de Números Complejos</strong>
-    </p>
+        <p>
+            Desarrollado por: Ing. Aldo Jiménez Arteaga e Ing. Abraham Cortes Ochoa
+        </p>
 
-    <p>
-        Desarrollado por: Ing. Aldo Jiménez Arteaga e Ing. Abraham Cortes Ochoa
-    </p>
+        <p>
+            Derechos de autor © 2026 Ing. Abraham Cortes Ochoa
+        </p>
 
-    <p>
-        Derechos de autor © 2026 Ing. Abraham Cortes Ochoa
-    </p>
+        <p>
+            Todos los derechos reservados.
+        </p>
 
-    <p>
-        Todos los derechos reservados.
-    </p>
-
-</footer>
+    </footer>
 
 <script src="{% static 'js/app.js' %}"></script>
 </body>
