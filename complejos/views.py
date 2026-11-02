@@ -189,20 +189,21 @@ def inicio(request):
 
                 if z2 is None:
 
-                    resultado = conjugado(
-                    z1
-                    )
+                    resultado = conjugado(z1)
 
                     grafica = graficar(
                         z1,
                         0,
-                        resultado
+                        resultado)
 
+                    grafica_html = grafica.to_html(
+
+                        full_html=False,
+
+                        include_plotlyjs="cdn"
                     )
                 else:
-                    resultado = conjugado(
-                        z2
-                    )
+                    resultado = conjugado(z2)
 
                     grafica = graficar(
                         0,
@@ -211,12 +212,14 @@ def inicio(request):
 
                     )
 
-                grafica_html = grafica.to_html(
+                    grafica_html = grafica.to_html(
 
-                    full_html=False,
+                        full_html=False,
 
-                    include_plotlyjs="cdn"
-                )
+                        include_plotlyjs="cdn"
+                    )
+
+
 
             elif operacion == "potencia":
 
