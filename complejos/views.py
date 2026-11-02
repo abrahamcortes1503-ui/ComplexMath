@@ -188,36 +188,21 @@ def inicio(request):
             elif operacion == "conjugado":
 
                 if z2 is None:
+                    numero = z1
+                else:
+                    numero = z2
 
-                    resultado = conjugado(z1)
+                    # Calcular el conjugado
+                resultado = conjugado(numero)
 
-                    grafica = graficar(
-                        z1,
-                        0,
-                        resultado)
+                grafica = graficar(numero, None, resultado)
 
-                    grafica_html = grafica.to_html(
+                grafica_html = grafica.to_html(
 
-                        full_html=False,
+                    full_html=False,
 
-                        include_plotlyjs="cdn"
-                    )
-                elif z1 is None:
-                    resultado = conjugado(z2)
-
-                    grafica = graficar(
-                        0,
-                        z2,
-                        resultado
-
-                    )
-
-                    grafica_html = grafica.to_html(
-
-                        full_html=False,
-
-                        include_plotlyjs="cdn"
-                    )
+                     include_plotlyjs="cdn"
+                )
 
 
 
