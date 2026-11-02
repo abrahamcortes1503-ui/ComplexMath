@@ -1,10 +1,4 @@
-body{
 
-    background:	#008000;
-
-    font-family:Arial;
-
-}
 
 .modal {
 
@@ -186,6 +180,11 @@ button:hover {
         padding: 20px;
     }
 
+    h1 {
+        font-size: 25px;
+    }
+}
+
 
 /* Pie de página y créditos */
 
@@ -214,7 +213,4 @@ button:hover {
     font-size: 16px;
 }
 
-    h1 {
-        font-size: 25px;
-    }
-}
+
