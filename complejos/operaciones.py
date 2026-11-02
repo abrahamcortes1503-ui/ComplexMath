@@ -8,6 +8,8 @@ Autor: Proyecto Calculadora de Números Complejos
 
 import cmath
 import math
+
+from complejos.conversiones import redondear
 from .parser import convertir
 
 
@@ -16,21 +18,21 @@ from .parser import convertir
 # =====================================================
 
 def suma(z1: convertir, z2: convertir):
-    return z1 + z2
+    return complex(round((z1 + z2).real,2),round((z1 + z2).img,2))
 
 
 def resta(z1: complex, z2: complex) -> complex:
-    return z1 - z2
+    return complex(round((z1 - z2).real,2),round((z1 - z2).img,2))
 
 
 def multiplicacion(z1: complex, z2: complex) -> complex:
-    return z1 * z2
+    return complex(round((z1 * z2).real,2),round((z1 * z2).img,2))
 
 
 def division(z1: complex, z2: complex) -> complex:
     if z2 == 0:
         raise ZeroDivisionError("No es posible dividir entre cero.")
-    return z1 / z2
+    return complex(round((z1 / z2).real,2),round((z1 / z2).img,2))
 
 
 # =====================================================
@@ -38,7 +40,7 @@ def division(z1: complex, z2: complex) -> complex:
 # =====================================================
 
 def conjugado(z: complex) -> complex:
-    return z.conjugate()
+    return  complex(round((z.conjugate()).real,2),round((z.conjugate()).img,2))
 
 # =====================================================
 # Potencias
@@ -48,7 +50,7 @@ def potencia(z: complex, n: int) -> complex:
     """
     Calcula z^n
     """
-    return z ** n
+    return complex(round((z ** n).real,2),round((z ** n).img,2))
 
 
 # =====================================================
@@ -79,7 +81,9 @@ def raices(z: complex, n: int) -> complex:
             modulo_raiz * math.sin(angulo)
         )
 
-        resultado.append(raiz)
+        resultado.append(
+            complex(round(raiz.real, 2), round(raiz.img, 2))
+        )
 
     return resultado
 

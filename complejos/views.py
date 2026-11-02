@@ -5,6 +5,8 @@ from django.conf import settings
 from django.http import JsonResponse
 
 from django.shortcuts import render
+
+from .conversiones import polar, redondear
 from .graficas import graficar, graficar_raices
 from .parser import convertir
 from .operaciones import (
@@ -118,6 +120,8 @@ def inicio(request):
 
 
 
+
+
             elif operacion == "resta":
 
                 resultado = resta(
@@ -183,16 +187,29 @@ def inicio(request):
 
             elif operacion == "conjugado":
 
-                resultado = conjugado(
+                if z2 == None:
+
+                    resultado = conjugado(
                     z1
-                )
+                    )
 
-                grafica = graficar(
-                    z1,
-                    z2,
-                    resultado
+                    grafica = graficar(
+                        z1,
+                        0,
+                        resultado
 
-                )
+                    )
+                else:
+                    resultado = conjugado(
+                        z2
+                    )
+
+                    grafica = graficar(
+                        0,
+                        z2,
+                        resultado
+
+                    )
 
                 grafica_html = grafica.to_html(
 
