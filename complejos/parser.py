@@ -161,4 +161,7 @@ def convertir(texto):
         )
 
 
+if __name__ == "__main__":
 
+    z1=convertir("2+3j")
+    print(z1)
