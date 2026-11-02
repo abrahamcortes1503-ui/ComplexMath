@@ -187,9 +187,9 @@ def inicio(request):
 
             elif operacion == "conjugado":
 
-                if z2 is None:
+                if not z2:
                     numero = z1
-                else:
+                elif not z1:
                     numero = z2
 
                     # Calcular el conjugado
