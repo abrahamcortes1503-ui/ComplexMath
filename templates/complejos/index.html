@@ -99,6 +99,10 @@
             🎲 Imagen aleatoria
         </button>
 
+        <button type="button" id="btnAyuda">
+            ¿Cómo usar la calculadora?
+        </button>
+
     </form>
 
     <div
@@ -129,6 +133,120 @@
         </div>
 
     </div>
+
+    <!-- Ventana de ayuda -->
+<div id="modalAyuda" class="modal-ayuda">
+
+    <div class="contenido-ayuda">
+
+        <span class="cerrar-ayuda" id="cerrarAyuda">
+            &times;
+        </span>
+
+        <h2>Guía de uso de la calculadora</h2>
+
+        <p>
+            Esta herramienta permite realizar operaciones
+            matemáticas con números complejos y visualizar
+            sus representaciones en el plano complejo.
+        </p>
+
+        <hr>
+
+        <h3>1. Instrucciones de uso</h3>
+
+        <p>
+            Introduce en los campos <strong>Número complejo 1</strong>  y <strong>Número complejo 2</strong>
+            los números complejos a operar, utilizando cualquiera de las formas (binómica, polar o exponencial)
+            de acuerdo con el siguiente formato en cada caso: <strong>i</strong>.
+        </p>
+
+        <ul>
+            <li>3+4i</li>
+            <li>2cis30°</li>
+            <li>3e^(i30°)</li>
+        </ul>
+
+        <p>
+            Posterior a ingresar los números a operar, seleccione en el campo <strong>Operación</strong> la operación que desea calcular.
+        </p>
+
+        <hr>
+
+        <h3>2. Resta de números complejos</h3>
+
+        <p>
+            La operación se lleva a cabo entre el número complejo 1 menos el número complejo 2.
+        </p>
+
+        <hr>
+
+        <h3>3. División</h3>
+
+        <p>
+            La operación se lleva a cabo entre el número complejo 1 como el dividendo y el número complejo 2 como el divisor.
+        </p>
+
+        <p>
+            <strong>Importante:</strong> el divisor no puede
+            ser igual a cero.
+        </p>
+
+        <hr>
+
+        <h3>4. Conjugado de un número complejo</h3>
+
+        <p>
+            Puedes utilizar el primer o segundo campo para ingresar el número a conjugar,
+            el otro campo hay que llenarlo con cero.
+        </p>
+
+
+        <p><strong>Ejemplo:</strong></p>
+        <p>z1 = 3+4i</p>
+        <p>z2 = 0</p>
+
+        <hr>
+
+        <h3>5. Potencia y Raíces enésimas</h3>
+
+        <p>
+            En el primer campo debe colocar el número complejo del que de desea obtener la potencia o las raíces,
+            en el segundo campo indicamos el índice de la potencia o raíz a calcular.
+        </p>
+
+        <hr>
+
+        <h3>8. Representación gráfica</h3>
+
+        <p>
+            Después de realizar una operación, la calculadora
+            muestra una representación gráfica de los números
+            complejos y del resultado, según la operación.
+        </p>
+
+        <p>
+            El eje horizontal representa la parte real y
+            el eje vertical representa la parte imaginaria.
+        </p>
+
+        <hr>
+
+        <h3>9. Imagen aleatoria</h3>
+
+        <p>
+            Presiona el botón <strong>Imagen aleatoria</strong>
+            para mostrar algunas actividades a realizar para practicar las diferentes
+            operaciones y formas de los números complejos.
+        </p>
+
+        <button type="button" id="cerrarAyuda2">
+            Entendido
+        </button>
+
+    </div>
+
+</div>
 
     {% if operacion == "raiz" %}
 

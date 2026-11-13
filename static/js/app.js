@@ -78,3 +78,38 @@ window.addEventListener(
 
     }
 );
+
+// Obtener elementos
+const btnAyuda = document.getElementById("btnAyuda");
+const modalAyuda = document.getElementById("modalAyuda");
+const cerrarAyuda = document.getElementById("cerrarAyuda");
+const cerrarAyuda2 = document.getElementById("cerrarAyuda2");
+
+// Abrir ventana
+btnAyuda.addEventListener("click", function() {
+    modalAyuda.style.display = "block";
+});
+
+// Cerrar con la X
+cerrarAyuda.addEventListener("click", function() {
+    modalAyuda.style.display = "none";
+});
+
+// Cerrar con el botón Entendido
+cerrarAyuda2.addEventListener("click", function() {
+    modalAyuda.style.display = "none";
+});
+
+// Cerrar al hacer clic fuera de la ventana
+window.addEventListener("click", function(event) {
+    if (event.target === modalAyuda) {
+        modalAyuda.style.display = "none";
+    }
+});
+
+// Cerrar con la tecla Escape
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        modalAyuda.style.display = "none";
+    }
+});
