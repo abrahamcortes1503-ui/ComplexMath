@@ -65,8 +65,11 @@ def convertir(texto):
     # ==================================================
 
     patron_exp = (
-        r"^([+-]?\d*\.?\d+)"
-        r"e\^\(i(.+)\)$"
+        r"^([+-]?\d*\.?\d+)"  # 1. Magnitud (ej. 3, -4.5)
+        r"e\^"                # 2. Parte exponencial literal "e^"
+        r"\(?i?"              # 3. Paréntesis de apertura y letra 'i' opcionales
+        r"([+-]?\d*\.?\d+)"   # 4. Ángulo o exponente (ej. 30, -45.5)
+        r"°?\)?$"             # 5. Símbolo de grado y paréntesis de cierre opcionales, y FIN ($)
     )
 
     coincidencia = re.match(
@@ -79,9 +82,9 @@ def convertir(texto):
             coincidencia.group(1)
         )
 
-        angulo = math.radians(
+        angulo = math.radians(float(
             coincidencia.group(2)
-        )
+        ))
 
         return cmath.rect(
             modulo,
@@ -163,5 +166,5 @@ def convertir(texto):
 
 if __name__ == "__main__":
 
-    z1=convertir("2+3j")
+    z1=convertir("1e^(i30°)")
     print(z1)

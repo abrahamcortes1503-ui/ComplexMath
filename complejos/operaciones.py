@@ -10,7 +10,7 @@ import cmath
 import math
 
 from complejos.conversiones import redondear
-from .parser import convertir
+from complejos.parser import convertir
 
 
 # =====================================================
@@ -93,8 +93,8 @@ def raices(z: complex, n: int) -> complex:
 
 if __name__ == "__main__":
 
-    z1 = complex(3, 4)
-    z2 = complex(2, -1)
+    z1 = complex(0, -4)
+    z2 = convertir("1e^(i30°)")
 
     print("Suma:", suma(z1, z2))
     print("Resta:", resta(z1, z2))
